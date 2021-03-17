@@ -1,9 +1,5 @@
 <?php
 global $link;
-global $host = '127.0.0.1';
-global $account = 'root';
-global $pass = '';
-global $database = '';
 
 function data_to_sql_update($tbl,$data,$cond){
 	if (!$tbl || !$data) return "";
@@ -32,17 +28,13 @@ function logDebug($mess){
 	error_log( date('d.m.Y h:i:s') . " $mess \n", 3, "log.log");
 }
 function connect(){
-	global $host ;
-	global $account ;
-	global $pass ;
-	global $database ;
 	global $link;
 	if ($link) return 0;
-	$link = mysqli_connect($host, $account, $pass);
+	$link = mysqli_connect('127.0.0.1', 'root', '');
 	if (!$link) {
 	    die('<br/>Khong ket noi duoc: ' . mysqli_error());
 	}	
-	mysqli_select_db($link,$database) or die('Could not select database.');
+	mysqli_select_db($link,'quanlychitieu') or die('Could not select database.');
 	mysqli_query($link,"SET NAMES 'utf8'");
 }
 
