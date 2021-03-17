@@ -1,0 +1,5 @@
+14.03.2021 05:52:17 <!-- sql=[insert into nguoidung (taikhoan,matkhau) values (nguoidung1,12345)] --> 
+14.03.2021 05:53:02 <!-- sql=[insert into nguoidung (taikhoan,matkhau) values (quang,12345)] --> 
+14.03.2021 05:53:51 <!-- sql=[insert into nguoidung (taikhoan,matkhau) values (quang,123)] --> 
+14.03.2021 06:03:36 <!-- sql=[insert into nguoidung(taikhoan,matkhau) values ("quangq","123")] --> 
+14.03.2021 06:03:49 <!-- sql=[insert into nguoidung(taikhoan,matkhau) values ("quangq","123")] --> 

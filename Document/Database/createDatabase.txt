@@ -1,0 +1,81 @@
+create database quanlychitieu;
+
+create table NguoiDung(
+	ID int AUTO_INCREMENT primary key,
+	TaiKhoan varchar(50) not null UNIQUE,
+	MatKhau varchar(50),
+	TenNguoiDung varchar(50),
+	Email varchar(50)
+);
+
+create table Vi
+(
+	ID int AUTO_INCREMENT primary key,
+	IDtk int not null,
+	TenVi varchar(50) not null UNIQUE,
+	SoTien int ,
+	foreign key(IDtk) references NguoiDung(ID)
+);
+
+create table DanhMuc
+(
+	ID int AUTO_INCREMENT primary key,
+	TenDanhMuc varchar(50) UNIQUE,
+	LoaiDanhMuc bit,
+	Icon varchar(50)
+);
+
+create table ThuChi
+(
+	ID int AUTO_INCREMENT primary key,
+	IDdm int not NULL,
+	IDvi int not NULL,
+	ThoiGian date,
+	GhiChu varchar(100),
+	SoTien int,
+	LoaiChiTieu bit,
+	foreign key (IDdm) references DanhMuc(ID),
+	foreign key (IDvi) references Vi(ID)
+);
+
+create table LapLai
+(
+	ID int AUTO_INCREMENT primary key,
+	LoaiLapLai varchar(50)
+);
+
+create table HanMucChi
+(
+	ID int AUTO_INCREMENT primary key,
+	TenHanMuc varchar(50),
+	NgayBatDau date,
+	NgayKetThuc date,
+	IDll int not null,
+	SoTienHanMuc int,
+	SoTienConLai int,
+	foreign key(IDll) references LapLai(ID)
+);
+
+create table HanMucChiVi
+(
+	IDhmc int not null ,
+	IDvi int not null,
+	primary key(IDhmc,IDvi),
+	foreign key(IDvi) references Vi(ID),
+	foreign key(IDhmc) references HanMucChi(ID)
+);
+
+
+
+create table HanMucChiDanhMuc
+(
+	IDhmc int not null,
+	IDdm int not null,
+	primary key(IDhmc,IDdm),
+	foreign key(IDhmc) references HanMucChi(ID),
+	foreign key(IDdm) references DanhMuc(ID)
+);
+
+
+
+
