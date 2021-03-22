@@ -12,7 +12,7 @@ create table Vi
 (
 	ID int AUTO_INCREMENT primary key,
 	IDtk int not null,
-	TenVi varchar(50) not null UNIQUE,
+	TenVi varchar(50),
 	SoTien int ,
 	foreign key(IDtk) references NguoiDung(ID)
 );

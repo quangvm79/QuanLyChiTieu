@@ -97,8 +97,8 @@ function exec_update($sql){
 	//$err = $link->error();
 	//kiem tra
 	if ($err){
-		print("Khong thể select duoc,ERROR=[" . $err . "]" );
-		print(  "COUNT=[0]" );
+		// print("Khong thể select duoc,ERROR=[" . $err . "]" );
+		// print(  "COUNT=[0]" );
 		return -1;
 	}
 	//$ret = mysqli_affected_rows();
@@ -118,3 +118,5 @@ function sql_str($val){
 	}
 	return "" . mysqli_real_escape_string($link,$val)  . "" ;
 }
+
+
