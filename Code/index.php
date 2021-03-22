@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý chi tiêu</title>
     <link rel="stylesheet" href="./css/layoutIndex.css">
+    <link rel="stylesheet" href="css/vi.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
     <div class="layout-left">
@@ -40,7 +43,56 @@
         <div class="thu-nhap content">this is chi thu nhập</div>
 
         <!-- ====== Ví =============== -->
-        <div class="vi content">this is ví</div>
+        <div class="vi content content-vi">
+            <div class="bt_them">
+                <button class="button btn_themvi">Thêm Ví</button>
+                <button class="button btn_themhanmuc">Thêm Hạn Mức</button>
+            </div>
+            <div class="grid_vi">
+                <table class="table" style="color: white;">
+                    <thead>
+                        <tr>
+                            <th>Tên Ví</th>
+                            <th>Số Tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>noi dung ten vi</td>
+                            <td>noi dung so tien</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="chuyen-tien">
+                <h1>CHUYỂN TIỀN</h1>
+                <div class="row">
+                    <div class="col">
+                        <p>Ví chuyển tiền</p>
+                        <select name="" id="">
+                            <option value="" disabled selected>Chọn ví chuyển tiền</option>
+                            <option value="">Techcombank</option>
+                            <option value="">viettinbank</option>
+                        </select>
+
+                        <p class="so-tien">Số tiền</p>
+                        <input type="text" placeholder="Nhập số tiền" name="money" required>
+                        
+                    </div>
+                    <div class="col">
+                        <p>Ví nhận tiền</p>
+                        <select name="" id="">
+                            <option value="" disabled selected>Chọn ví nhận tiền</option>
+                            <option value="">Techcombank</option>
+                            <option value="">viettinbank</option>
+                        </select>
+                        
+                    </div>
+                    
+                </div>
+                <button class="btn_chuyentien">Chuyển tiền</button>
+            </div>
+        </div>
 
         <!-- ====== Danh mục =============== -->
         <div class="danh-muc content">this is danh mục</div>
