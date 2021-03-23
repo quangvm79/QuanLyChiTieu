@@ -155,13 +155,13 @@
                             data:{account:ac,pass:pw,user:un,email:em},
                             success:function(data,status){
                                 let rs = JSON.parse(data);
-                            
+                                console.log(rs);
                                 if(rs["success"] == "true"){
                                     alert("Bạn đã đăng ký tài khoản thành công");
                                     window.location.assign("./thietlapvi.php");
                                 }
                                 else
-                                    alert("Vui lòng thử lại");
+                                    alert(rs["message"]);
                             }
                         });
                         }else{
