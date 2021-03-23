@@ -236,7 +236,7 @@ if(isset($_SESSION["account"])){
 
         <!-- ====== Ví =============== -->
 
-        <div class="vi content content-vi">
+        <div class="vi content content-vi" style="display:none;">
             <div class="bt_them">
                 <button class="button btn_themvi">Thêm Ví</button>
                 <button class="button btn_themhanmuc">Thêm Hạn Mức</button>
@@ -286,8 +286,6 @@ if(isset($_SESSION["account"])){
                 <button class="btn_chuyentien">Chuyển tiền</button>
             </div>
         </div>
-
-        <div class="vi content" style="display:none;">this is ví</div>
 
 
         <!-- ====== Danh mục =============== -->
