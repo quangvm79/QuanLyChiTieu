@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/dangnhap.css" type="text/css" media="all" />
+    <script src="./js/jquery.min.js"></script>
     <!-- Style-CSS -->
 </head>
 
@@ -23,7 +24,7 @@
                 <h1 style="margin-top: 30px; margin-left:110px;color:white;">Đăng Nhập</h1>
             </div>
             <div class="col">
-                <form action="" method="POST" style="background-color:#f1f1f1;   margin-top:100px">
+                <form class="form-dang-nhap" name="dang-nhap" action="#" method="POST" style="background-color:#f1f1f1;   margin-top:100px">
                     <div class="container" style="background-color:#f1f1f1">
 
                         <label for="uname"><b>Tên Đăng Nhập</b></label>
@@ -37,7 +38,7 @@
                             <input type="password" placeholder="Nhập Mật Khẩu" name="password" required>
                             <span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
                         </div>
-                        <button type="submit" name="submit" class="btn_login ">Đăng nhập</button>
+                        <button type="submit" name="submit" class="btn_login " id="id_btn_login">Đăng nhập</button>
                         <label>
                             
             
@@ -76,15 +77,13 @@
 
         
 
-        <form class="modal-content" method="POST" >
+        <form name="dang-ky" class="modal-content" method="POST" action = "#">
             
             <div class="container" style="background-color:#f1f1f1 ;width: 500px;">
                 <h1>Đăng ký thành viên</h1>
                 <hr>
                 <label for="Tên đăng nhập"><b>Tên đăng nhập</b></label>
                         <input type="text" placeholder="Nhập tên đăng nhập" name="username" required>
-
-
 
                         <label for="psw"><b>Mật khẩu</b></label>
                         <input type="password" placeholder="Nhập mật khẩu" name="password" required>
@@ -95,26 +94,84 @@
                         <label for="Tên người dùng"><b>Tên người dùng</b></label>
                         <input type="text" placeholder="Nhập tên người dùng" name="showname" required>
 
-                        <label for="Tên hiển thị"><b>Nhập email</b></label>
-                        <input type="email" placeholder="Nhập email" name="email" required>
+                        <label for="Tên hiển thị"><b>Nhập email</b></label>     
+                        <input type="email" placeholder="Nhập email" name="email" required>     
 
                         <div class="clearfix">
-                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                            <button type="submit_dk" class="signupbtn" name="submit_dk">Sign Up</button>
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy</button>
+                            <button class="signupbtn" id="btn_signup">Đăng ký</button>
                         </div>
                     </div>
                 </form>
-            </div>
+    </div>
 
+
+
+
+
+<!-- Xử lý đăng nhập -->
             <script>
-                // Get the modal
-                var modal = document.getElementById('id01');
+                $('#id_btn_login').click(function(e){
+                    e.preventDefault();
+                    let ac = document.forms["dang-nhap"]["username"].value;
+                    let pw = document.forms["dang-nhap"]["password"].value;
 
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
+                    if(ac != "" && pw != ""){
+                        $.ajax({
+                            url: "./appProcess/login.php",
+                            method: "POST",
+                            data:{account:ac,pass:pw},
+                            success:function(data,status){
+                                let rs = JSON.parse(data);
+                                
+                                if(rs["success"] == "true")
+                                    window.location.assign("./index.php");
+                                else
+                                    alert("Tài khoản hoặc mật khẩu không đúng");
+                            }
+                        });
+                    }else{
+                        alert('Không được để trống các trường');
+                    }    
+                });            
+            </script>
+
+            <!-- Xử lý đăng nhập -->
+            <script>
+
+               $('#btn_signup').click(function(e){
+                    e.preventDefault();
+                    let ac = document.forms["dang-ky"]["username"].value;
+                    let pw = document.forms["dang-ky"]["password"].value;
+                    let rpw = document.forms["dang-ky"]["repassword"].value;
+                    let un = document.forms["dang-ky"]["showname"].value;
+                    let em = document.forms["dang-ky"]["email"].value;
+
+                    if(ac != "" && pw != "" && rpw != "" && un != "" && em != ""){
+                        if(pw == rpw){
+                            $.ajax({
+                            url: "./appProcess/signup.php",
+                            method: "POST",
+                            data:{account:ac,pass:pw,user:un,email:em},
+                            success:function(data,status){
+                                let rs = JSON.parse(data);
+                                console.log(rs);
+                                if(rs["success"] == "true"){
+                                    alert("Bạn đã đăng ký tài khoản thành công");
+                                    window.location.assign("./thietlapvi.php");
+                                }
+                                else
+                                    alert(rs["message"]);
+                            }
+                        });
+                        }else{
+                            alert("Nhập lại mật khẩu không trùng");
+                        }
+                    }else{
+                        alert('Không được để trống các trường');
+                    }  
+
+               });
+                       
             </script>
 </body>
