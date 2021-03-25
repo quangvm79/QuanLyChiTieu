@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.danh-muc {
+    margin: 80px 150px;
+    font-size: 20px;
+}
+
+.quanly-dm {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.them-dm {
+    background-color: #2c3e50;
+    color: white;
+    padding-left: 80px;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.them-dm h1 {
+    padding-right: 70px;
+}
+
+.them-dm .quanly-dm .content {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.chitieu {
+    border-right: 1px solid white;
+}
+
+span {
+    margin-left: 150px;
+}
+
+.chitieu p,
+.thunhap p {
+    margin-bottom: 30px;
+}
+
+.them-dm input[type=text],
+select {
+    width: 80%;
+}
+
+.btn_them_dm {
+    margin-top: 20px;
+    background-color: #a3a9af;
+    text-align: center;
+    margin-left: 300px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.container {
+    padding: 16px;
+}
+
+.modal {
+    font-size: 20px;
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}

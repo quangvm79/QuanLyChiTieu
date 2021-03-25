@@ -17,10 +17,11 @@ if(isset($_SESSION["account"])){
     <title>Quản lý chi tiêu</title>
     <link rel="stylesheet" href="./css/layoutIndex.css">
     <link rel="stylesheet" href="css/vi.css">
+    <link rel="stylesheet" href="css/style_danhmuc.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -195,7 +196,7 @@ if(isset($_SESSION["account"])){
             </div>
 
             <div class="bt_them">
-                <button class="button btn_themvi">Thêm Ví</button>
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="button btn_themvi">Thêm Ví</button>
                 <button class="button btn_themhanmuc">Thêm Hạn Mức</button>
             </div>
             <div class="grid_vi">
@@ -241,7 +242,7 @@ if(isset($_SESSION["account"])){
 
 
         <!-- ====== Danh mục =============== -->
-        <div class="danh-muc content" style="display:none; position:relative;">
+  <div class="danh-muc content" style="display:none; position:relative;">
             <div class="danhmuc_main">
             <h1>Quản lý danh mục</h1>
 
@@ -317,7 +318,6 @@ if(isset($_SESSION["account"])){
         <!-- ====== Thống kê =============== -->
         <div class="thong-ke content" style="display:none;">this is thong ke</div>
 
-        <!-- ====== Tài khooản =============== -->
     </div>
 
 
@@ -353,7 +353,38 @@ if(isset($_SESSION["account"])){
             }
         });
     </script>
+<!-- Them vi -->
+<div id="id01" class="modal">
+    
+  <form class="modal-content animate"  method="post">
+    <div class="container">
+      <label for="name"><b>Tên ví</b></label>
+      <input type="text" placeholder="Nhập tên ví" name="tenvi" required>
 
+      <label for="money"><b>Số tiền</b></label>
+      <input type="text" placeholder="Nhập số tiền trong ví" name="sotien" required>
+        
+      <button type="submit">Lưu</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 <!-- tab CHI TIEU -->
     <script>
         const chiTieuTop = document.querySelector(".chi-tieu-top");
