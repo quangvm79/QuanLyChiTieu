@@ -69,3 +69,30 @@ body {
   padding-left: 25px;
   background-color: var(--theme-color__hover);
 }
+.name-custome {
+  cursor: pointer;
+}
+.account {
+  position: relative;
+}
+.account:hover .account_option {
+  display: block;
+}
+.account_option {
+  display: none;
+  position: absolute;
+  top: -150%;
+  left: 60%;
+  width: 200px;
+  background: var(--theme-color__hover);
+  font-size: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.account_option div {
+  padding: 10px;
+  cursor: pointer;
+}
+.account_option div:hover {
+  background-color: #3e5b77;
+}
