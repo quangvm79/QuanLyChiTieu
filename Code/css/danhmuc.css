@@ -110,11 +110,16 @@ label {
   font-size: 24px;
 }
 #dm_add_sbm {
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 20px;
   border-radius: 10px;
-  width: 200px;
+  width: 170px;
   background: #a0a4a8;
+  padding: 15px;
+  color: white;
+}
+#dm_add_sbm:hover {
+  background-color: var(--theme-color__hover);
 }
 .dm_edit {
   position: absolute;

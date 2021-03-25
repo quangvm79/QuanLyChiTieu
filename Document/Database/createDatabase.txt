@@ -22,6 +22,8 @@ create table DanhMuc
 	ID int AUTO_INCREMENT primary key,
 	TenDanhMuc varchar(50),
 	LoaiDanhMuc bit,
+	IDtk int,
+	FOREIGN KEY (IDtk) REFERENCES nguoidung(ID),
 	unique (TenDanhMuc,LoaiDanhMuc)
 );
 

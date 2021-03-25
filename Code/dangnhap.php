@@ -122,12 +122,17 @@
                             method: "POST",
                             data:{account:ac,pass:pw},
                             success:function(data,status){
+                               
+                                if(data == "error1"){
+                                    alert("Tài khoản này không tồn tại");
+                                    return;
+                                }
                                 let rs = JSON.parse(data);
                                 
                                 if(rs["success"] == "true")
                                     window.location.assign("./index.php");
                                 else
-                                    alert("Tài khoản hoặc mật khẩu không đúng");
+                                    alert("Mật khẩu không đúng");
                             }
                         });
                     }else{
