@@ -6,6 +6,13 @@ if(isset($_POST["account"]) && isset($_POST["pass"])){
     $ac = $_POST["account"];
     $pw = $_POST["pass"];
 
+    $sql = "select * from nguoidung where TaiKhoan = \"$ac\"";
+    $data = select_list($sql);
+    if(count($data) == 0){
+        echo "error1";
+        die();
+    }
+
     $sql = "select * from nguoidung where TaiKhoan = \"$ac\" and MatKhau = \"$pw\"";
     $data = select_one($sql);
 

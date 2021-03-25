@@ -17,9 +17,9 @@ if($dt != null){
 
 
     $sql = "select * from vi where TenVi = \"$tenVi\" and IDtk = $id";
-    $rs = select_one($sql);
+    $rs = select_list($sql);
     
-    if(is_array($rs)){
+    if(count($rs) > 0){
         echo "error1";
         die();
     }

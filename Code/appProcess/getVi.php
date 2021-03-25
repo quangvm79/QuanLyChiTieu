@@ -15,6 +15,11 @@ if($dt != null){
 
     $dt = select_list($sql);
 
+    if(count($dt) == 0){
+        echo "error1";
+        die();
+    }
+
     if($dt != null){
         $rs = ["data"=>$dt];
     }

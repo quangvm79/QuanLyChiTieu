@@ -96,3 +96,7 @@ body {
 .account_option div:hover {
   background-color: #3e5b77;
 }
+.btn:hover {
+  color: white !important;
+  background-color: var(--theme-color__hover);
+}

@@ -2817,3 +2817,578 @@ hiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc from thuchi,danhmuc where thuchi.IDdm =
 25.03.2021 03:40:30 sql=[select * from danhmuc order by ID DESC] 
 25.03.2021 03:40:30 sql=[select * from vi where IDtk = 3] 
 25.03.2021 03:40:30 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 03:56:02 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 03:56:02 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 03:56:02 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 03:56:02 sql=[select * from vi where IDtk = 3] 
+25.03.2021 03:56:56 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 03:56:56 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 03:56:56 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 03:56:56 sql=[select * from vi where IDtk = 3] 
+25.03.2021 03:57:53 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 03:57:53 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 03:57:53 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 03:57:53 sql=[select * from vi where IDtk = 3] 
+25.03.2021 03:59:30 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 03:59:30 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 03:59:30 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 03:59:30 sql=[select * from vi where IDtk = 3] 
+25.03.2021 03:59:54 <!-- sql=[update vi set SoTien = SoTien - 100000 where ID = 5] --> 
+25.03.2021 03:59:54 <!-- sql=[update vi set SoTien = SoTien + 100000 where ID = 4] --> 
+25.03.2021 03:59:55 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 03:59:55 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:00:02 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:00:02 sql=[select * from vi where TenVi = "aaaa" and IDtk = 3] 
+25.03.2021 04:00:02 <!-- sql=[insert into vi(TenVi,SoTien,IDtk) values("aaaa",4332,3)] --> 
+25.03.2021 04:00:03 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:00:03 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:00:13 sql=[select SoTien from vi where ID = 5 ] 
+25.03.2021 04:00:14 sql=[select SoTien from vi where ID = 8 ] 
+25.03.2021 04:02:10 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:02:10 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:02:10 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:02:10 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:02:30 <!-- sql=[delete from thuchi where IDdm = 15] --> 
+25.03.2021 04:02:30 <!-- sql=[delete from danhmuc where ID = 15] --> 
+25.03.2021 04:02:30 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:02:30 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:02:43 <!-- sql=[delete from thuchi where IDvi = 8] --> 
+25.03.2021 04:02:43 <!-- sql=[delete from vi where ID = 8] --> 
+25.03.2021 04:02:43 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:02:43 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:02:43 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:02:51 sql=[select * from danhmuc order by ID DESC] 
+ "quang"] 
+25.03.2021 04:02:51 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:02:51 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:02:58 sql=[select * from danhmuc where TenDanhMuc = "    " and LoaiDanhMuc = 1] 
+25.03.2021 04:02:58 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc) values("    ",1)] --> 
+25.03.2021 04:03:00 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:03:04 <!-- sql=[delete from thuchi where IDdm = 35] --> 
+25.03.2021 04:03:04 <!-- sql=[delete from danhmuc where ID = 35] --> 
+25.03.2021 04:03:05 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:03:05 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:03:13 sql=[select * from danhmuc order by ID DESC] 
+ "quang"] 
+25.03.2021 04:03:13 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:03:13 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:03:59 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:03:59 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:03:59 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:03:59 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:03:59 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:05:01 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:05:01 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:05:01 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:05:01 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:07:15 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:07:15 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:07:15 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:07:15 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:08:00 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:08:00 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:08:00 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:08:00 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:08:37 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:08:37 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:08:37 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:08:37 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:10:07 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:10:07 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:10:07 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:10:07 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:10:52 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:10:52 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:10:52 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:10:52 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:11:21 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:11:21 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:11:21 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:11:21 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:11:35 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:11:35 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:11:35 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:11:35 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:15:12 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:15:12 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:15:12 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:15:12 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:15:28 <!-- sql=[update vi set SoTien = SoTien - 50000 where ID = 4] --> 
+25.03.2021 04:15:28 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(21,4,"2021-03-24","-",50000,1)] --> 
+25.03.2021 04:15:31 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:15:44 sql=[select IDvi from thuchi where ID = 113] 
+25.03.2021 04:15:44 <!-- sql=[update vi set SoTien = SoTien - 100000 where ID = 7] --> 
+25.03.2021 04:15:44 <!-- sql=[delete from thuchi where ID = 113] --> 
+25.03.2021 04:15:54 sql=[select SoTien from vi where ID = 5 ] 
+25.03.2021 04:15:56 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 04:16:08 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 04:16:20 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:16:20 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:16:20 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:16:20 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:18:21 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 04:18:33 <!-- sql=[update vi set SoTien = SoTien + 100000 where ID = 7] --> 
+25.03.2021 04:18:33 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(20,7,"2021-03-23","-",100000,0)] --> 
+25.03.2021 04:18:34 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:18:34 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:18:37 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 04:18:52 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:18:57 sql=[select IDvi from thuchi where ID = 115] 
+25.03.2021 04:18:57 <!-- sql=[update vi set SoTien = SoTien - 100000 where ID = 7] --> 
+25.03.2021 04:18:57 <!-- sql=[delete from thuchi where ID = 115] --> 
+25.03.2021 04:19:01 sql=[select SoTien from vi where ID = 5 ] 
+25.03.2021 04:19:02 sql=[select SoTien from vi where ID = 4 ] 
+25.03.2021 04:19:03 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 04:19:04 sql=[select SoTien from vi where ID = 5 ] 
+25.03.2021 04:19:05 sql=[select SoTien from vi where ID = 4 ] 
+25.03.2021 04:21:25 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:21:25 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:21:25 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:21:25 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:21:38 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 04:21:44 <!-- sql=[update vi set SoTien = SoTien + 100000 where ID = 7] --> 
+25.03.2021 04:21:44 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(12,7,"2021-03-16","-",100000,0)] --> 
+25.03.2021 04:21:46 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:21:46 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:21:48 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 04:21:49 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:21:56 sql=[select IDvi from thuchi where ID = 116] 
+25.03.2021 04:21:56 <!-- sql=[update vi set SoTien = SoTien - 100000 where ID = 7] --> 
+25.03.2021 04:21:56 <!-- sql=[delete from thuchi where ID = 116] --> 
+25.03.2021 04:21:56 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:21:56 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:22:09 sql=[select IDvi from thuchi where ID = 114] 
+25.03.2021 04:22:09 <!-- sql=[update vi set SoTien = SoTien + 50000 where ID = 4] --> 
+25.03.2021 04:22:09 <!-- sql=[delete from thuchi where ID = 114] --> 
+25.03.2021 04:22:09 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:22:09 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:24:23 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:24:23 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:24:23 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:24:23 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:25:21 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:25:21 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:25:21 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:25:21 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:25:21 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:26:10 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:26:10 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:26:10 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:26:10 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:26:10 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:26:49 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:26:50 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:26:50 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:26:50 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:26:50 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:26:51 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:26:51 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:26:51 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:26:51 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:26:54 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:26:54 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:26:54 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:26:54 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:27:07 sql=[select * from nguoidung where TaiKhoan = "admin" and MatKhau = "1"] 
+25.03.2021 04:31:22 sql=[select * from nguoidung where TaiKhoan = "qqqqqq"] 
+25.03.2021 04:31:22 sql=[select * from nguoidung where TaiKhoan = "qqqqqq" and MatKhau = "qqq"] 
+25.03.2021 04:32:01 sql=[select * from nguoidung where TaiKhoan = "ewrwer"] 
+25.03.2021 04:32:01 sql=[select * from nguoidung where TaiKhoan = "ewrwer" and MatKhau = "we"] 
+25.03.2021 04:32:43 sql=[select * from nguoidung where TaiKhoan = "ttt"] 
+25.03.2021 04:33:35 sql=[select * from nguoidung where TaiKhoan = "324"] 
+25.03.2021 04:33:51 sql=[select * from nguoidung where TaiKhoan = "546"] 
+25.03.2021 04:34:05 sql=[select * from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:34:05 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:34:05 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:34:05 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:34:05 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:34:05 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:34:12 sql=[select * from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:34:12 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "214"] 
+25.03.2021 04:34:37 sql=[select * from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:34:37 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "4324"] 
+25.03.2021 04:34:41 sql=[select * from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:34:41 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:34:41 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:34:41 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:34:41 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:34:41 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:34:48 sql=[select * from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:34:48 sql=[select * from nguoidung where TaiKhoan = "admin" and MatKhau = "1"] 
+25.03.2021 04:35:04 sql=[select * from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:35:04 sql=[select * from nguoidung where TaiKhoan = "admin" and MatKhau = "123"] 
+25.03.2021 04:35:04 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:35:04 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:35:04 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:35:04 sql=[select * from vi where IDtk = 1] 
+25.03.2021 04:37:09 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:37:09 sql=[select * from danhmuc order by ID DESC] 
+25.03.2021 04:37:09 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:37:09 sql=[select * from vi where IDtk = 1] 
+25.03.2021 04:49:35 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:49:35 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:49:35 sql=[select * from vi where IDtk = 1] 
+25.03.2021 04:49:35 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:49:35 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 04:49:45 sql=[select * from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:49:45 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:49:46 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:49:46 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:49:46 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:49:46 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:49:46 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:50:13 sql=[select * from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:50:13 sql=[select * from nguoidung where TaiKhoan = "admin" and MatKhau = "1"] 
+25.03.2021 04:50:16 sql=[select * from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:50:16 sql=[select * from nguoidung where TaiKhoan = "admin" and MatKhau = "123"] 
+25.03.2021 04:50:16 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:50:16 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:50:16 sql=[select * from vi where IDtk = 1] 
+25.03.2021 04:50:16 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:50:16 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 04:54:41 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:54:41 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:54:41 sql=[select * from vi where IDtk = 1] 
+25.03.2021 04:54:41 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 04:54:41 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 04:55:24 sql=[select * from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:55:24 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 04:55:24 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:55:24 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:55:24 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:55:24 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:55:24 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:56:14 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:56:14 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:56:14 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:56:14 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:56:14 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:56:26 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:56:26 sql=[select * from danhmuc where TenDanhMuc = "Đi ăn sáng" and LoaiDanhMuc = 1 and IDtk = 3] 
+25.03.2021 04:56:26 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc,IDtk) values("Đi ăn sáng",1,3)] --> 
+25.03.2021 04:56:27 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:56:27 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:56:33 <!-- sql=[delete from thuchi where IDdm = 36] --> 
+25.03.2021 04:56:33 <!-- sql=[delete from danhmuc where ID = 36] --> 
+25.03.2021 04:56:33 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:56:33 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:56:33 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:56:36 <!-- sql=[delete from thuchi where IDdm = 36] --> 
+25.03.2021 04:56:36 <!-- sql=[delete from danhmuc where ID = 36] --> 
+25.03.2021 04:56:36 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:56:36 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:56:36 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:56:41 <!-- sql=[delete from thuchi where IDdm = 36] --> 
+25.03.2021 04:56:41 <!-- sql=[delete from danhmuc where ID = 36] --> 
+25.03.2021 04:56:41 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:56:41 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:56:41 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:57:50 <!-- sql=[delete from thuchi where IDdm = 36] --> 
+25.03.2021 04:57:50 <!-- sql=[delete from danhmuc where ID = 36] --> 
+25.03.2021 04:57:50 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:57:50 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:57:50 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:57:53 <!-- sql=[delete from thuchi where IDdm = 36] --> 
+25.03.2021 04:57:53 <!-- sql=[delete from danhmuc where ID = 36] --> 
+25.03.2021 04:57:53 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:57:53 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:57:53 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:57:56 <!-- sql=[delete from thuchi where IDdm = 36] --> 
+25.03.2021 04:57:56 <!-- sql=[delete from danhmuc where ID = 36] --> 
+25.03.2021 04:57:56 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:57:56 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:57:56 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:59:09 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:59:09 <!-- sql=[update danhmuc set TenDanhMuc = "Đi ăn sánga" where ID = 36 and IDtk = 3] --> 
+25.03.2021 04:59:09 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:59:09 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 04:59:18 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:59:18 sql=[select * from vi where IDtk = 3] 
+25.03.2021 04:59:18 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 04:59:18 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 04:59:18 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:02:21 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:02:21 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:02:21 sql=[select * from vi where IDtk = 3] 
+25.03.2021 05:02:21 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:02:21 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:02:30 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:02:30 sql=[select * from danhmuc where TenDanhMuc = "quang" and LoaiDanhMuc = 1 and IDtk = 3] 
+25.03.2021 05:02:30 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc,IDtk) values("quang",1,3)] --> 
+25.03.2021 05:02:31 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:02:31 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:02:34 <!-- sql=[delete from thuchi where IDdm = 37] --> 
+25.03.2021 05:02:34 <!-- sql=[delete from danhmuc where ID = 37] --> 
+25.03.2021 05:02:34 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:02:34 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:02:34 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:02:45 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:02:45 sql=[select * from danhmuc where TenDanhMuc = "aaa" and LoaiDanhMuc = 1 and IDtk = 3] 
+25.03.2021 05:02:45 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc,IDtk) values("aaa",1,3)] --> 
+25.03.2021 05:02:46 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:02:46 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:03:24 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:03:24 sql=[select * from danhmuc where TenDanhMuc = "â" and LoaiDanhMuc = 0 and IDtk = 3] 
+25.03.2021 05:03:24 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc,IDtk) values("â",0,3)] --> 
+25.03.2021 05:03:25 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:03:25 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:03:34 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 05:03:35 sql=[select SoTien from vi where ID = 5 ] 
+25.03.2021 05:03:44 sql=[select * from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:03:44 sql=[select * from nguoidung where TaiKhoan = "admin" and MatKhau = "1"] 
+25.03.2021 05:03:46 sql=[select * from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:03:46 sql=[select * from nguoidung where TaiKhoan = "admin" and MatKhau = "123"] 
+25.03.2021 05:03:46 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:03:46 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:03:46 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:03:46 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:03:46 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:04:00 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:04:00 <!-- sql=[update danhmuc set TenDanhMuc = "Trò chơi điện tử1" where ID = 21 and IDtk = 1] --> 
+25.03.2021 05:04:00 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:04:00 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:07:24 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:07:24 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:07:24 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:07:24 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:07:24 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:07:43 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:07:43 sql=[select * from vi where TenVi = "TienMat" and IDtk = 1] 
+25.03.2021 05:07:43 <!-- sql=[insert into vi(TenVi,SoTien,IDtk) values("TienMat",13123123,1)] --> 
+25.03.2021 05:07:44 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:07:44 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:07:49 <!-- sql=[delete from thuchi where IDvi = 9] --> 
+25.03.2021 05:07:50 <!-- sql=[delete from vi where ID = 9] --> 
+25.03.2021 05:07:50 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:07:50 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:07:50 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:08:08 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:08:08 sql=[select * from vi where TenVi = "TienMat" and IDtk = 1] 
+25.03.2021 05:08:08 <!-- sql=[insert into vi(TenVi,SoTien,IDtk) values("TienMat",13123123,1)] --> 
+25.03.2021 05:08:09 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:08:09 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:08:45 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:08:45 sql=[select * from vi where TenVi = "TienMat" and IDtk = 1] 
+25.03.2021 05:09:08 <!-- sql=[update vi set SoTien = SoTien - 213123 where ID = 10] --> 
+25.03.2021 05:09:08 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(21,10,"2021-03-16","-",213123,1)] --> 
+25.03.2021 05:09:14 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:09:23 sql=[select IDvi from thuchi where ID = 117] 
+25.03.2021 05:09:23 <!-- sql=[update vi set SoTien = SoTien + 213123 where ID = 10] --> 
+25.03.2021 05:09:23 <!-- sql=[delete from thuchi where ID = 117] --> 
+25.03.2021 05:09:23 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:09:23 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:09:32 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:09:32 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:09:32 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:09:32 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:09:32 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:09:48 <!-- sql=[update vi set SoTien = SoTien - 1000000 where ID = 10] --> 
+25.03.2021 05:09:48 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(21,10,"2021-03-18","-",1000000,1)] --> 
+25.03.2021 05:09:53 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:10:06 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:10:10 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:10:10 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:10:10 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:10:10 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:10:10 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:11:43 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:11:43 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:11:43 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:11:43 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:11:43 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:11:51 sql=[select IDvi from thuchi where ID = 118] 
+25.03.2021 05:11:51 <!-- sql=[update vi set SoTien = SoTien + 1000000 where ID = 10] --> 
+25.03.2021 05:11:51 <!-- sql=[delete from thuchi where ID = 118] --> 
+25.03.2021 05:11:51 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:11:51 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:12:07 <!-- sql=[delete from thuchi where IDvi = 10] --> 
+25.03.2021 05:12:07 <!-- sql=[delete from vi where ID = 10] --> 
+25.03.2021 05:12:07 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:12:07 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:12:07 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:14:44 <!-- sql=[update vi set SoTien = SoTien + 66666 where ID = ] --> 
+25.03.2021 05:15:29 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:15:29 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:15:29 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:15:29 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:15:29 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:15:35 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:15:35 sql=[select * from vi where TenVi = "123123" and IDtk = 1] 
+25.03.2021 05:15:35 <!-- sql=[insert into vi(TenVi,SoTien,IDtk) values("123123",123,1)] --> 
+25.03.2021 05:15:36 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:15:36 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:15:51 <!-- sql=[update vi set SoTien = SoTien + 5345353 where ID = 11] --> 
+25.03.2021 05:15:51 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(22,11,"2021-03-24","-",5345353,0)] --> 
+25.03.2021 05:15:52 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:15:52 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:15:53 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:16:00 <!-- sql=[delete from thuchi where IDvi = 11] --> 
+25.03.2021 05:16:00 <!-- sql=[delete from vi where ID = 11] --> 
+25.03.2021 05:16:00 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:16:00 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:16:00 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:16:06 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:16:17 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:17:43 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:17:43 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:17:43 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:17:43 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:17:43 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:18:14 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:14 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:18:14 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:18:14 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:14 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:18:30 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:30 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:18:30 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:18:30 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:30 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:18:37 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:37 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:18:37 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:18:37 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:37 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:18:59 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:59 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:18:59 sql=[select * from vi where IDtk = 1] 
+25.03.2021 05:18:59 sql=[select ID from nguoidung where TaiKhoan = "admin"] 
+25.03.2021 05:18:59 sql=[select * from danhmuc where IDtk = 1 order by ID DESC] 
+25.03.2021 05:19:17 sql=[select * from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:19:17 sql=[select * from nguoidung where TaiKhoan = "quang" and MatKhau = "1"] 
+25.03.2021 05:19:17 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:19:17 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:19:17 sql=[select * from vi where IDtk = 3] 
+25.03.2021 05:19:18 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:19:18 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:19:35 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 05:19:44 <!-- sql=[update vi set SoTien = SoTien + 6000000 where ID = 7] --> 
+25.03.2021 05:19:44 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(39,7,"2021-03-30","-",6000000,0)] --> 
+25.03.2021 05:19:45 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:19:45 sql=[select * from vi where IDtk = 3] 
+25.03.2021 05:20:02 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 05:20:14 sql=[select SoTien from vi where ID = 7 ] 
+25.03.2021 05:20:16 <!-- sql=[update vi set SoTien = SoTien - 1000000 where ID = 7] --> 
+25.03.2021 05:20:16 <!-- sql=[insert into thuchi(IDdm,IDvi,ThoiGian,GhiChu,SoTien,LoaiChiTieu) values(38,7,"2021-03-19","-",1000000,1)] --> 
+25.03.2021 05:20:17 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:20:17 sql=[select * from vi where IDtk = 3] 
+25.03.2021 05:20:18 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:20:42 sql=[select IDvi from thuchi where ID = 121] 
+25.03.2021 05:20:42 <!-- sql=[update vi set SoTien = SoTien + 1000000 where ID = 7] --> 
+25.03.2021 05:20:42 <!-- sql=[delete from thuchi where ID = 121] --> 
+25.03.2021 05:20:42 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:20:42 sql=[select * from vi where IDtk = 3] 
+25.03.2021 05:35:42 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:35:42 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:35:43 sql=[select * from vi where IDtk = 3] 
+25.03.2021 05:35:43 sql=[select ID from nguoidung where TaiKhoan = "quang"] 
+25.03.2021 05:35:43 sql=[select * from danhmuc where IDtk = 3 order by ID DESC] 
+25.03.2021 05:36:09 sql=[select * from nguoidung where TaiKhoan="phong"] 
+25.03.2021 05:36:09 <!-- sql=[insert into nguoidung(TaiKhoan,MatKhau,TenNguoiDung,Email) values("phong","1","phonghh","phong@gmail.com")] --> 
+25.03.2021 05:36:19 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:36:19 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",1000000)] --> 
+25.03.2021 05:36:19 <!-- sql=[] --> 
+25.03.2021 05:36:21 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:36:21 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",1000000)] --> 
+25.03.2021 05:36:21 <!-- sql=[] --> 
+25.03.2021 05:36:22 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:36:22 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",1000000)] --> 
+25.03.2021 05:36:22 <!-- sql=[] --> 
+25.03.2021 05:36:22 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:36:22 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",1000000)] --> 
+25.03.2021 05:36:22 <!-- sql=[] --> 
+25.03.2021 05:36:22 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:36:22 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",1000000)] --> 
+25.03.2021 05:36:22 <!-- sql=[] --> 
+25.03.2021 05:36:22 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:36:22 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",1000000)] --> 
+25.03.2021 05:36:23 <!-- sql=[] --> 
+25.03.2021 05:39:55 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:39:55 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:39:55 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",)] --> 
+25.03.2021 05:39:55 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:39:56 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:39:56 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",)] --> 
+25.03.2021 05:39:56 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:39:56 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:39:56 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",)] --> 
+25.03.2021 05:39:56 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:39:56 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:39:56 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",)] --> 
+25.03.2021 05:40:28 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:40:28 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:40:28 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",10000)] --> 
+25.03.2021 05:40:35 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:40:35 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:40:35 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",10000)] --> 
+25.03.2021 05:40:35 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:40:36 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:40:36 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",10000)] --> 
+25.03.2021 05:40:36 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:40:36 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:40:36 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",10000)] --> 
+25.03.2021 05:40:36 sql=[select ID from nguoidung where TaiKhoan = "phong"] 
+25.03.2021 05:40:36 sql=[select * from vi where TenVi = "" and IDtk = 4] 
+25.03.2021 05:40:36 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(4,"Tiền Mặt",10000)] --> 
+25.03.2021 05:43:49 sql=[select * from nguoidung where TaiKhoan="phonghh"] 
+25.03.2021 05:43:49 <!-- sql=[insert into nguoidung(TaiKhoan,MatKhau,TenNguoiDung,Email) values("phonghh","1","phonghh","phong@gmail.com")] --> 
+25.03.2021 05:44:00 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:44:00 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(5,"Tiền Mặt",999999)] --> 
+25.03.2021 05:46:26 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:46:26 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(5,"Tiền Mặt",999999)] --> 
+25.03.2021 05:49:41 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:49:41 sql=[select * from vi where TenVi = "" and IDtk = 5] 
+25.03.2021 05:49:41 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(5,"Tiền Mặt",)] --> 
+25.03.2021 05:49:41 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc,IDtk) values
+                    ("Ăn uống",1,5),
+                    ("Đi lại",1,5),
+                    ("Cưới hỏi",1,5),
+                    ("Vui chơi",1,5),
+                    ("Đổ xăng",1,5),
+                    ("Lương",0,5),
+                    ("Thưởng",0,5),
+                    ("Vay nợ",0,5),
+                    ("Được cho",0,5)] --> 
+25.03.2021 05:51:07 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:51:07 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(5,"Tiền Mặt",1000000)] --> 
+25.03.2021 05:51:07 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc,IDtk) values
+                    ("Ăn uống",1,5),
+                    ("Đi lại",1,5),
+                    ("Cưới hỏi",1,5),
+                    ("Vui chơi",1,5),
+                    ("Đổ xăng",1,5),
+                    ("Lương",0,5),
+                    ("Thưởng",0,5),
+                    ("Vay nợ",0,5),
+                    ("Được cho",0,5)] --> 
+25.03.2021 05:51:07 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:51:07 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:51:07 sql=[select * from vi where IDtk = 5] 
+25.03.2021 05:51:07 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:51:07 sql=[select * from danhmuc where IDtk = 5 order by ID DESC] 
+25.03.2021 05:52:23 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:52:26 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:53:26 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:53:26 sql=[select * from vi where IDtk = 5] 
+25.03.2021 05:53:26 sql=[select ID from nguoidung where TaiKhoan = "phonghh"] 
+25.03.2021 05:53:26 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:53:26 sql=[select * from danhmuc where IDtk = 5 order by ID DESC] 
+25.03.2021 05:53:49 sql=[select * from nguoidung where TaiKhoan="manh"] 
+25.03.2021 05:53:49 <!-- sql=[insert into nguoidung(TaiKhoan,MatKhau,TenNguoiDung,Email) values("manh","1","manh","manh@gmail.com")] --> 
+25.03.2021 05:53:55 sql=[select ID from nguoidung where TaiKhoan = "manh"] 
+25.03.2021 05:53:55 <!-- sql=[insert into vi(IDtk,TenVi,SoTien) values(6,"Tiền Mặt",100000)] --> 
+25.03.2021 05:53:55 <!-- sql=[insert into danhmuc(TenDanhMuc,LoaiDanhMuc,IDtk) values
+                    ("Ăn uống",1,6),
+                    ("Đi lại",1,6),
+                    ("Cưới hỏi",1,6),
+                    ("Vui chơi",1,6),
+                    ("Đổ xăng",1,6),
+                    ("Lương",0,6),
+                    ("Thưởng",0,6),
+                    ("Vay nợ",0,6),
+                    ("Được cho",0,6)] --> 
+25.03.2021 05:53:55 sql=[select ID from nguoidung where TaiKhoan = "manh"] 
+25.03.2021 05:53:55 sql=[select thuchi.ID,ThoiGian,thuchi.SoTien,GhiChu,LoaiChiTieu,TenDanhMuc,LoaiDanhMuc,TenVi from thuchi,danhmuc,vi where thuchi.IDdm = danhmuc.ID and thuchi.IDvi = vi.ID order by ThoiGian desc] 
+25.03.2021 05:53:55 sql=[select * from vi where IDtk = 6] 
+25.03.2021 05:53:55 sql=[select ID from nguoidung where TaiKhoan = "manh"] 
+25.03.2021 05:53:55 sql=[select * from danhmuc where IDtk = 6 order by ID DESC] 

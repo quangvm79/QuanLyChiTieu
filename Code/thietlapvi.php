@@ -75,7 +75,6 @@
             method: "POST",
             data:{money:moneyValue},
             success: function(data,status){
-                // console.log(data);
                 let rs = JSON.parse(data);
                 // console.log(rs);
                 if(rs.success == "false"){

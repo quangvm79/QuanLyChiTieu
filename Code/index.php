@@ -17,7 +17,6 @@ if(isset($_SESSION["account"])){
     <title>Quản lý chi tiêu</title>
     <link rel="stylesheet" href="./css/layoutIndex.css">
     <link rel="stylesheet" href="css/vi.css">
-    <link rel="stylesheet" href="css/style_danhmuc.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
@@ -251,18 +250,7 @@ if(isset($_SESSION["account"])){
                     <h2>Chi tiêu</h2>
                     <br>
                     <div class="dm_container dm_container-chi">
-                        <div class="dm_elm">       <!-- div dữ liệu -->
-                            <img src="./images/i-trash.png" alt="icon_trash">
-                            <p>vidu1</p>
-                        </div>
-                        <div class="dm_elm">       <!-- div dữ liệu -->
-                            <img src="./images/i-trash.png" alt="icon_trash">
-                            <p>vidu1</p>
-                        </div>
-                        <div class="dm_elm">       <!-- div dữ liệu -->
-                            <img src="./images/i-trash.png" alt="icon_trash">
-                            <p>vidu1</p>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -270,13 +258,7 @@ if(isset($_SESSION["account"])){
                     <h2>Thu nhập</h2>
                     <br>
                     <div class="dm_container dm_container-thu">
-                        <div class="dm_elm">       <!-- div dữ liệu -->
-                            <img src="./images/i-trash.png" alt="icon_trash">
-                            <p>vidu2</p> 
-                        </div><div class="dm_elm">       <!-- div dữ liệu -->
-                            <img src="./images/i-trash.png" alt="icon_trash">
-                            <p>vidu1</p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -449,6 +431,7 @@ if(isset($_SESSION["account"])){
                              let tienvi = tienTrongVi - soTienChi;
                              document.querySelector("#form-chi-tieu input[name=vitien]").setAttribute("data-money",tienvi);
                              document.querySelector("#form-chi-tieu input[name=vitien]").value = fm(tienvi) + " đ";
+                             loadVi();
                          }else{
                              alert("Thất bại, thử lại");
                          }
@@ -539,6 +522,17 @@ if(isset($_SESSION["account"])){
             method:"POST",
             data:{},
             success: function(data,status){
+                if(data == "error1"){
+                    document.getElementById("vi-chi-tieu").innerHTML = "";
+                    document.getElementById("vi-thu-nhap").innerHTML = "";
+                    document.getElementById("vi_chuyen_tien").innerHTML = "";
+                    document.getElementById("vi_nhan_tien").innerHTML = "";
+                    document.querySelector(".list-vi").innerHTML = "";
+                    document.querySelector("#form-chi-tieu input[name=vitien]").value = "";
+                    document.querySelector("#form-thu-nhap input[name=vitien]").value = "";
+
+                    return;
+                }
                let vi = JSON.parse(data).data;
                renderVi(vi);
                 document.querySelector("#form-chi-tieu input[name=vitien]").setAttribute("data-money",vi[0].SoTien);
@@ -579,6 +573,13 @@ if(isset($_SESSION["account"])){
                 method:"POST",
                 data:{},
                 success: function(data,status){
+                    if(data == "empty"){
+                        document.getElementById("id-danh-muc-chi-tieu").innerHTML = "";
+                        document.getElementById("id-danh-muc-thu-nhap").innerHTML = "";
+                        document.querySelector(".dm_container-chi").innerHTML = "";
+                        document.querySelector(".dm_container-thu").innerHTML = "";
+                        return;
+                    }
                     let rs = JSON.parse(data).data;
                     renderDanhMuc(rs);
                 }
@@ -744,7 +745,7 @@ if(isset($_SESSION["account"])){
                 method:"POST",
                 data:{id:idThuChi,tienXoa:tienXoa,typeDel:typeDel},
                 success: function(data,status){
-                    console.log(data);
+                    loadVi();
                 }
             });
 
@@ -979,5 +980,20 @@ if(isset($_SESSION["account"])){
             }
         }
     </script>
+
+
+    <!-- Đăng xuất tài khoản -->
+        <script>
+            document.querySelector(".account_logout").onclick= function(){
+                $.ajax({
+                    url:"./appProcess/logout.php",
+                    method:"POST",
+                    data:{},
+                    success:function(d,s){
+                        location.reload();
+                    }
+                });
+            }
+        </script>
 </body>
 </html>
