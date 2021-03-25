@@ -3,7 +3,7 @@ create database quanlychitieu;
 create table NguoiDung(
 	ID int AUTO_INCREMENT primary key,
 	TaiKhoan varchar(50) not null UNIQUE,
-	MatKhau varchar(50),
+	MatKhau varchar(50) not null,
 	TenNguoiDung varchar(50),
 	Email varchar(50)
 );
@@ -20,9 +20,9 @@ create table Vi
 create table DanhMuc
 (
 	ID int AUTO_INCREMENT primary key,
-	TenDanhMuc varchar(50) UNIQUE,
+	TenDanhMuc varchar(50),
 	LoaiDanhMuc bit,
-	Icon varchar(50)
+	unique (TenDanhMuc,LoaiDanhMuc)
 );
 
 create table ThuChi
@@ -75,6 +75,20 @@ create table HanMucChiDanhMuc
 	foreign key(IDhmc) references HanMucChi(ID),
 	foreign key(IDdm) references DanhMuc(ID)
 );
+
+
+insert into danhmuc(TenDanhMuc,LoaiDanhMuc) values ("Ăn uống",1),
+("Đi lại",1),
+("Sinh hoạt",1),
+("HIếu hỉ",1),
+("Vui chơi",1),
+("Nhà cửa",1),
+("Trang phục",1)
+insert into danhmuc(TenDanhMuc,LoaiDanhMuc) values ("Lương",0),
+("Thưởng",0),
+("Được tặng",0),
+("Tiền lại",0)
+
 
 
 
