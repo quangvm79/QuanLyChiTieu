@@ -1,4 +1,4 @@
-create database quanlychitieu;
+create database appquanlychitieu;
 
 create table NguoiDung(
 	ID int AUTO_INCREMENT primary key,
@@ -39,6 +39,12 @@ create table ThuChi
 	foreign key (IDdm) references DanhMuc(ID),
 	foreign key (IDvi) references Vi(ID)
 );
+
+
+
+
+
+
 
 create table LapLai
 (
