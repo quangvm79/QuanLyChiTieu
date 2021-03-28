@@ -62,6 +62,48 @@ if(isset($_SESSION["account"])){
     </div>
 
     <div class="layout-right main">
+        <!-- Xem thông tin tài khoản -->
+        <div class="account_show"  style="display:none">
+            <span class="close_info">&#10799;</span>
+            <h3>Thông tin tài khoản</h3>
+            <div class="account_show_info">
+                <div>
+                <div class="account_show_title">Tên người dùng</div>
+                <div class="account_show_data">Nguyễn văn A</div>
+                </div>
+                <div>
+                <div class="account_show_title">Tên người dùng</div>
+                <div class="account_show_data">Nguyễn văn A</div>
+                </div>
+                <div>
+                <div class="account_show_title">Tên người dùng</div>
+                <div class="account_show_data">Nguyễn văn A</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Đổi mật khẩu -->
+        <div class="account_show change_pass" style="display:none">
+            <h3>Đổi mật khẩu</h3>
+            <form action="#">
+                <div>
+                    <span>Mật khẩu cũ:</span>
+                    <input type="password" name="oldPass">
+                </div>
+                <div>
+                    <span>Mật khẩu mới:</span>
+                    <input type="password" name="newPass">
+                </div>
+                <div>
+                    <span>Xác nhận mật khẩu:</span>
+                    <input type="password" name="reNewPass">
+                </div>
+                <div>
+                    <button type="submit" class="btn_change_pass">Đổi mật khẩu</button>
+                    <button class="btn_close_change_pass">Hủy</button>
+                </div>
+            </form>
+        </div>
         <!-- ====== Chi tieu =============== -->
         <div class="chi-tieu content">
         
@@ -153,7 +195,7 @@ if(isset($_SESSION["account"])){
                         <input type="text" name="vitien" disabled value="10000 đ" style="color:white" data-money="10000">
                     </div>
                     <div class="form-chi-tieu__ngaychi half-form">
-                        <label for="ngaychi">Ngày chi</label>
+                        <label for="ngaychi">Ngày thu</label>
                         <input type="date"  name="ngaychi">
                     </div>
                     <div class="form-chi-tieu__ghichu">
@@ -839,7 +881,10 @@ if(isset($_SESSION["account"])){
                     method:"POST",
                     data:{id:id,newName:newName},
                     success:function(data,status){
-                        if(data == "ok"){
+                        if(data == "exist"){
+                            alert("Danh mục đã có");
+                        }
+                        else if(data == "ok"){
                             loadDanhMuc();
                             formEditDm.style.display = "none";
                         }
@@ -993,6 +1038,87 @@ if(isset($_SESSION["account"])){
                         location.reload();
                     }
                 });
+            }
+        </script>
+        <!-- Xem thông tin tài khoản -->
+        <script>
+            document.querySelector(".account_info").onclick= function(){
+                document.querySelector(".account_show").style.display = "block";
+    
+            }
+            document.querySelector(".close_info").onclick= function(){
+                document.querySelector(".account_show").style.display = "none";
+            }
+        </script>
+
+        <!-- Lấy thông tin tài khoản -->
+
+        <script>
+            $.ajax({
+                url:"./appProcess/getInfoAccount.php",
+                method:"POST",
+                data:{},
+                success:function(data,status){
+                    let rs = JSON.parse(data);
+                    document.querySelector(".account_show_info").innerHTML = `
+                    <div>
+                    <div class="account_show_title">Tên tài khoản:</div>
+                    <div class="account_show_data">${rs.TaiKhoan}</div>
+                    </div>
+                    <div>
+                    <div class="account_show_title">Tên người dùng</div>
+                    <div class="account_show_data">${rs.TenNguoiDung}</div>
+                    </div>
+                    <div>
+                    <div class="account_show_title">Email: </div>
+                    <div class="account_show_data">${rs.Email}</div>
+                    </div>
+                    `;
+                }
+            });
+        </script>
+
+        <!-- Đổi mật khẩu -->
+        <script>
+            document.querySelector(".account_repass").onclick= function(){
+                document.querySelector(".change_pass").style.display = "block";
+    
+            }
+
+            document.querySelector(".btn_close_change_pass").onclick= function(e){
+                e.preventDefault();
+                document.querySelector(".change_pass").style.display = "none";
+    
+            }
+            document.querySelector(".btn_change_pass").onclick= function(e){
+                e.preventDefault();
+                let oldPass = document.querySelector(".change_pass form input[name=oldPass]").value; 
+                let newPass = document.querySelector(".change_pass form input[name=newPass]").value; 
+                let reNewPass = document.querySelector(".change_pass form input[name=reNewPass]").value; 
+                if(oldPass == "" || newPass == "" || reNewPass == "")
+                    alert("Không được để trống");
+                else if(newPass != reNewPass)
+                    alert("Xác nhận mật khẩu mới không trùng");
+                else{
+                    $.ajax({
+                        url:"./appProcess/changePass.php",
+                        method:"POST",
+                        data:{oldPass:oldPass,newPass:newPass},
+                        success:function(data,status){
+                            if(data == "error1")
+                                alert("Mật khẩu cũ không đúng");
+                            else if(data == "ok"){
+                                document.querySelector(".change_pass form input[name=oldPass]").value = "";
+                                document.querySelector(".change_pass form input[name=newPass]").value = "";
+                                document.querySelector(".change_pass form input[name=reNewPass]").value = "";
+                                document.querySelector(".change_pass").style.display = "none";
+                                alert("Đổi mật khẩu thành công");
+                            }else{
+                                alert("Có lỗi xảy ra, vui lòng thử lại sau");
+                            }
+                        }
+                    });
+                }
             }
         </script>
 </body>
