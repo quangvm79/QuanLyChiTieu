@@ -25,8 +25,11 @@ if(isset($_SESSION["account"])){
 
 
     <script src="./js/jquery.min.js" ></script>
+    <script src="./js/Chart.min.js"></script>
     <link rel="stylesheet" href="./css/quanLyChiTieu.css">
     <link rel="stylesheet" href="./css/danhmuc.css">
+    <link rel="stylesheet" href="./css/thongke.css">
+    <link rel="stylesheet" href="./css/themhanmuc.css">
 
 </head>
 <body>
@@ -55,9 +58,9 @@ if(isset($_SESSION["account"])){
                 <li data-menu="thu-nhap"><i class="fas fa-hand-holding-usd"></i>Thu nhập</li>
                 <li data-menu="vi" ><i class="fas fa-wallet"></i>Ví</li>
                 <li data-menu="danh-muc" ><i class="fas fa-bars"></i>Danh mục</li>
+                <li data-menu="han-muc"><i class="fas fa-money-check"></i>Hạn mức chi tiêu</li>
                 <li data-menu="thong-ke"><i class="fas fa-chart-bar"></i>Thống kê</li>
             </ul>
-
         </div>
     </div>
 
@@ -339,14 +342,581 @@ if(isset($_SESSION["account"])){
             </div>
         </div>
 
+        <!-- ====== Hạn mức chi tiêu =============== -->
+        <div class="han-muc content" style="display:none;">
+            <div class="han_muc_content">
+                <button class="btn_open_add_hm btn">Thêm hạn mức</button>  
+
+                <div class="list_hm">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tên hạn mức</th>
+                                <th>Số tiền</th>
+                                <th>Danh mục</th>
+                                <th>Ví</th>
+                                <th>Lặp lại</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tên hạn mức</td>
+                                <td>Số tiền</td>
+                                <td>Danh mục</td>
+                                <td>Ví</td>
+                                <td>Lặp lại</td>
+                                <td><i class="fas fa-trash" ></td>
+                                <td><i class="fas fa-edit" ></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="sua_han_muc" style="display:none">
+                <h3>Sửa hạn mức chi tiêu</h3>
+                <div><span>Tên hạn mức</span></div>
+                <div><input type="text" class="ip_edit_ten_hm"></div>
+                <div><span>Số tiền</span></div>
+                <div><input type="number" class="ip_edit_sotien_hm"></div>
+                <div><span>Lặp lại</span></div>
+                <div><select name="ip_hm_laplai" class="ip_hm">
+                                <option value="everyday">Hàng ngày</option>
+                                <option value="everyweek">Hàng tuần</option>
+                                <option value="everymonth">Hàng tháng</option>
+                     </select>
+                </div>
+                <div><button class="btn_edit_hm" data-id="-1">Sửa</button><button class="btn_close_edit_hm">Hủy</button></div>
+            </div>
+
+            <script>
+                document.querySelector(".btn_close_edit_hm").onclick = function(){
+                    document.querySelector(".sua_han_muc").style.display = "none";
+                }
+                function editHanMuc(tenHm,soTien,id){
+                    document.querySelector(".sua_han_muc").style.display = "block";
+                    document.querySelector(".btn_edit_hm").setAttribute("data-id",id);
+                    document.querySelector(".ip_edit_ten_hm").value = tenHm;
+                    document.querySelector(".ip_edit_sotien_hm").value = soTien;
+                }
+                document.querySelector(".btn_edit_hm").onclick = function(){
+                    let tenHm = document.querySelector(".ip_edit_ten_hm").value;
+                    let soTien = document.querySelector(".ip_edit_sotien_hm").value;
+                    let lapLai = document.querySelector("select[name=ip_hm_laplai]").value;
+                    let id = document.querySelector(".btn_edit_hm").getAttribute("data-id");
+                    id = parseInt(id);
+                    // console.log(id);
+                    $.ajax({
+                        url:"./appProcess/editHanMuc.php",
+                        method:"POST",
+                        data:{tenHm:tenHm,soTien:soTien,lapLai:lapLai,id:id},
+                        success:function(data,status){
+                            console.log(data);
+                           if(data == "1"){
+                            renderHanMuc();
+                           }
+                            else{
+                                alert("Có lỗi xảy ra");
+                            }
+                        }
+                    });
+                }
+
+            </script>
+            <div class="themhanmuc" style="display:none;">
+                <h1>Thêm hạn mức chi tiêu</h1>
+                <form action="" class="form_add_hm">
+                    <div class="add_hm_name">
+                        <label for="ip_hm_name">Tên hạn mức</label>
+                        <input type="text" placeholder="Nhập tên hạn mức" 
+                        class="ip_hm_name" id="ip_hm_name">
+                    </div>
+
+                    <div class="add_hm_2nd">
+                        <div class="add_hm_ele" >
+                            <label for="ip_sotien">Số tiền hạn mức</label>
+                            <input type="number" placeholder="Nhập số tiền" class="ip_hm"
+                            id="ip_sotien">
+                           
+                        </div>
+                        <div class="add_hm_ele">
+                            <label for="ip_hm_chonvi">Chọn ví</label>
+                            <select name="" id="ip_hm_chonvi" class="ip_hm">
+                                <option value="bank">atm</option>
+                                <option value="wallet">ví</option> 
+                                <!-- render option -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="add_hm_2nd">
+                        <div class="add_hm_ele">
+                            <label for="ip_hm_loai_chi_tieu">Danh mục</label>
+                            
+                            <select name="" id="ip_hm_loai_chi_tieu" class="ip_hm">
+                                <option value="123">ăn uống</option>
+                                <option value="234">mua sắm</option> 
+                                <!-- render option -->
+                            </select>
+                        </div>
+
+                        <div class="add_hm_ele">
+                            <label for="ip_hm_laplai">Lặp lại:</label>
+
+                            <select name="" id="ip_hm_laplai" class="ip_hm">
+                                <option value="everyday">Hàng ngày</option>
+                                <option value="everyweek">Hàng tuần</option>
+                                <option value="everymonth">Hàng tháng</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="add_hm_btn">
+                        <input type="submit" value="Thêm" class="btn_them_hm">
+                        <input type="button" value="Huỷ" class="btn_huy_them_hm">
+                    </div>
+                </form>
+            </div>
+        </div>
         <!-- ====== Thống kê =============== -->
-        <div class="thong-ke content" style="display:none;">this is thong ke</div>
+        <div class="thong-ke content" style="display:none;">
+                <h3 style="text-align:center;font-size:20px;color:#000;margin-bottom:20px;">Thống kê chi tiêu theo danh mục</h3>
+              <div class="thong_ke_wrap">
+                    <div class="danh_muc_chart">
+                            <canvas id="danhMucChart"></canvas>
+                    </div>  
+                    <div class="time_select">
+                                <div><span>Từ: </span>
+                                <input type="date" name="startDateDanhMuc"></div>
+                                <div><span>Đến:</span>
+                                <input type="date" name="endDateDanhMuc"></div>
+                                <div><button class="reloadDanhMucChart">Cập nhật</button></div>
+                    </div>            
+              </div>
+              <h3 style="text-align:center;font-size:20px;color:#000;margin-top:40px;">Thống kê chi tiêu theo năm</h3>
+
+              <div class="nam_chart">
+                    <canvas id="namChart"></canvas>
+              </div>
+              <div class="nam_select">
+                  <select name="namSelect" id="namSelectChart">
+                  </select>    
+                  <button class="reloadNamChart">Cập nhật</button>
+              </div>
+              <h3 style="text-align:center;font-size:20px;color:#000;margin-top:40px;">Thống kê chi tiêu theo tháng</h3>
+
+                <div class="nam_chart">
+                    <canvas id="thangChart"></canvas>
+                </div>
+                <div class="nam_select">
+                    <input type="month" name="ipThang">  
+                    <button class="reloadThangChart">Cập nhật</button>
+                </div>
+        
+        </div>
 
     </div>
 
+<!-- Mở bảng thêm hạn mức -->
+        <script>
+            document.querySelector(".btn_open_add_hm").onclick = function(){
+                document.querySelector(".themhanmuc").style.display = "flex";
+            }
+            document.querySelector(".btn_huy_them_hm").onclick = function(e){
+                e.preventDefault();
+                document.querySelector(".themhanmuc").style.display = "none";
+            }
+            document.querySelector(".btn_them_hm").onclick = function(e){
+                e.preventDefault();
+                let tenHm = document.querySelector("#ip_hm_name").value;
+                let soTien = document.querySelector("#ip_sotien").value;
+                let idVi = document.querySelector("#ip_hm_chonvi").value;
+                let idDm = document.querySelector("#ip_hm_loai_chi_tieu").value;
+                let lapLai = document.querySelector("#ip_hm_laplai").value;
+                
+                tenHm = tenHm.trim();
+                tenHm = tenHm == "" ? "-" : tenHm;
+                if(soTien == ""){
+                    alert("Nhập số tiền !");
+                    return ;
+                }
+
+                $.ajax({
+                    url:"./appProcess/themHanMuc.php",
+                    method:"POST",
+                    data:{tenHm:tenHm,soTien:soTien,idVi:idVi,idDm:idDm,lapLai:lapLai},
+                    success:function(data,status){
+                        console.log(data);
+                        if(data == "error1")
+                            alert("Hạn mức chi tiêu cho ví và danh mục này đã tồn tại.\nVui lòng chọn ví hoặc danh mục khác");
+                        else if(data == "1"){
+                            alert("Đã thêm hạn mức");
+                            document.querySelector("#ip_hm_name").value="";
+                            document.querySelector("#ip_sotien").value="";
+                            document.querySelector(".themhanmuc").style.display = "none";
+                            renderHanMuc();
+                        }
+                            // let rs = JSON.parse(data);
+                    }
+                });
+            }
+
+            function renderHanMuc(){
+                $.ajax({
+                    url:"./appProcess/getHanMuc.php",
+                    method:"POST",
+                    data:{},
+                    success:function(data,status){
+                        let rs = JSON.parse(data);
+                        if(rs.length == 0){
+                            document.querySelector(".list_hm tbody").innerHTML = "";
+                            return;
+                        }
+                        let html = ``;
+                        rs.forEach(function(value){
+                            let ll = "";
+                            if(value.LapLai == "everyday")
+                                ll = "Hàng ngày";
+                            else if(value.LapLai == "everyweek")
+                                ll = "Hàng tuần";
+                            else ll = "Hàng tháng";
+                            html += `<tr><td>${value.TenHanMuc}</td>
+                                <td>${value.SoTien}</td>
+                                <td>${value.TenDanhMuc}</td>
+                                <td>${value.TenVi}</td>
+                                <td>${ll}</td>
+                                <td><i class="fas fa-trash" onclick="deleteHanMuc(${value.ID})"></td>
+                                <td><i class="fas fa-edit" onclick="editHanMuc('${value.TenHanMuc}',${value.SoTien},${value.ID})"></td></tr>`;
+                        });
+
+                        document.querySelector(".list_hm tbody").innerHTML = html;
+                    }
+                });
+            }
+
+            renderHanMuc();
+
+            function deleteHanMuc(id){
+                if(!confirm("Bạn muốn xóa hạn mức ?"))
+                    return;
+                $.ajax({
+                    url:"./appProcess/deleteHanMuc.php",
+                    method:"POST",
+                    data:{idHm:id},
+                    success:function(data,status){
+                       if(data == "1")
+                        renderHanMuc();
+                    }
+                });
+            }
+        </script>
+<!-- load nam thong ke -->
+        <script>
+            $.ajax({
+                    url:"./appProcess/getYearThuChi.php",
+                    method:"POST",
+                    data:{},
+                    success:function(data,status){
+
+                            let html = '';
+                            let rs = JSON.parse(data);
+                            rs.forEach(function(value){
+                                html += `<option value="${value.year}">${value.year}</option>`;
+                            });
+
+                            if(rs.length > 0){
+                                loadDataNamChart(rs[0].year)
+                            }else{
+                                loadDataNamChart();
+                            }
+                           document.getElementById("namSelectChart").innerHTML = html; 
+                    }
+                });
+        </script>
+<!-- Render chart thống kê -->
+    <script>
+            function randomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            // let ctx1 = document.getElementById('myChart1').getContext('2d');
+            let config = {
+                type: 'pie',
+                data: {
+                    labels:[],
+                    datasets:[{label:'',data:[],backgroundColor:[]}]
+                    },
+                option: {responsive: true}
+                }
+
+            let namChartConfig = {
+                type: 'bar',
+                data: {
+                    labels:[],
+                    datasets:[{label:'',data:[],backgroundColor:[]}]
+                    },
+                option: {
+                                responsive: true,
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true}
+                                    }]
+                                }
+                            }
+                }
+            let thangChartConfig = {
+                type: 'bar',
+                data: {
+                    labels:[],
+                    datasets:[{label:'',data:[],backgroundColor:[]}]
+                    },
+                option: {
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        responsive: true,
+                        scales: {
+                            xAxes: [{
+                                stacked: true,
+                               
+                            }],
+                            yAxes: [{
+                                stacked: true,
+                            }]
+                        }
+                    }
+                }
+            let barStackOption = {
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        responsive: true,
+                        scales: {
+                            xAxes: [{
+                                stacked: true,
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }],
+                            yAxes: [{
+                                stacked: true,
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    };
+            let lineOption = {
+                    responsive: true,
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Date'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value'
+                            }
+                        }]
+                    }
+                };
+            
+          
+          
+//=============================// Load thống kê danh mục //=================================
+            function loadDataDanhMucChart(startDate= "2000-01-01",endDate="2099-12-31"){
+                startDate = startDate == "" ? "2000-01-01" : startDate;
+                endDate = endDate == "" ? "2099-12-31" : endDate;
+                let labels = [];
+                let dataChart = [];
+                let backGround = [];
+                $.ajax({
+                    url:"./appProcess/dataChartDanhMuc.php",
+                    method:"POST",
+                    data:{startDate:startDate,endDate:endDate},
+                    success:function(data,status){
+                      
+                            let rs = JSON.parse(data);
+                            rs.forEach(function(value){
+                                labels.push(value.TenDanhMuc);
+                                dataChart.push(value.TongTien);
+                                backGround.push(randomColor());
+                            });
+                           
+                    }
+                });
+                config.data.labels = labels;
+                config.data.datasets[0].data = dataChart;
+                config.data.datasets[0].backgroundColor = backGround;
+                // console.log(config);
+            }
+
+            loadDataDanhMucChart();
+            let ctx = document.getElementById('danhMucChart').getContext('2d');
+            let danhMucChart = new Chart(ctx,config);
+
+            const ipStartDateDanhMuc = document.querySelector("input[name=startDateDanhMuc]");
+            const ipEndDateDanhMuc = document.querySelector("input[name=endDateDanhMuc]");
+
+            ipStartDateDanhMuc.onchange = function(){
+                updateDanhMucChart();
+            }
+            ipEndDateDanhMuc.onchange = function(){
+                updateDanhMucChart();
+            }
+            function updateDanhMucChart(){
+                let std = ipStartDateDanhMuc.value;
+                let end = ipEndDateDanhMuc.value;
+                loadDataDanhMucChart(std,end);
+            }
+
+            document.querySelector(".reloadDanhMucChart").onclick = function(){
+                danhMucChart.update();
+            }
+           
+            
 
 
+//============================= Load thống kê theo nam==============================================
 
+            function loadDataNamChart(year = new Date().getYear()){
+                year = year == "" ? "2021" : year;
+                let labels = [];
+                let dataChart = [];
+                let backGround = [];
+                $.ajax({
+                    url:"./appProcess/dataNamChart.php",
+                    method:"POST",
+                    data:{year:year},
+                    success:function(data,status){
+                    //   console.log(data);
+                            let rs = JSON.parse(data);
+                            rs.forEach(function(value){
+                                labels.push("Tháng "+value.Thang);
+                                dataChart.push(value.TongTien);
+                                backGround.push(randomColor());
+                            });
+                            dataChart.push(0);
+                    }
+                });
+                namChartConfig.data.labels = labels;
+                namChartConfig.data.datasets[0].data = dataChart;
+                namChartConfig.data.datasets[0].backgroundColor = backGround;
+                // console.log(config);
+            }
+
+            document.getElementById("namSelectChart").onchange = function(){
+                let y = document.getElementById("namSelectChart").value;
+                loadDataNamChart(y);
+            }
+            document.querySelector(".reloadNamChart").onclick = function(){
+                namChart.update();
+            }
+            
+            let namC = document.getElementById('namChart').getContext('2d');
+            let namChart = new Chart(namC,namChartConfig);
+
+// ========== Load thông kê theo tháng ==========================
+            function daysInMonth (month, year) {
+                return new Date(year, month, 0).getDate();
+            }
+           
+            function loadDataThangChart(month = (new Date().getMonth()),year = (new Date().getFullYear())){
+                year = year == "" ? "2021" : year;
+                month = month == "" ? "1" : month;
+                // console.log(month,year);
+                let labels = [];
+                let dataChart = [];
+                let backGround = [];
+                let arrData = [];
+                let nDay = daysInMonth(month,year);
+                for(let i = 1;i <= nDay;i++){
+                    labels.push(i+"/"+month);
+                }
+
+                $.ajax({
+                    url:"./appProcess/dataThangChart.php",
+                    method:"POST",
+                    data:{year:year,month:month},
+                    success:function(data,status){
+                    //   console.log(data);
+                            let rs = JSON.parse(data);
+                            // console.log(rs);
+                            if(rs.length == 0)
+                                return;
+                            let t1 = "";
+                            let t2 = "";
+                            
+                            rs.forEach(function(value){
+                                t2 = t1;  
+                                t1 = value.TenDanhMuc;
+                                if (t2 != t1){
+                                    let obj = {label:"",data:new Array(nDay),backgroundColor:randomColor()};
+                                    obj.data.fill(0);
+                                    obj.label = t1;
+                                    arrData.push(obj);
+                                }
+                            });
+                            rs.forEach(function(value){
+                                let pos = parseInt(value.day) - 1;
+                                arrData.forEach(function(ob){
+                                    let tenDm = ob.label;
+                                    if(value.TenDanhMuc == tenDm){
+                                        ob.data[pos] = value.SoTien;
+                                    }
+                                });
+                            });
+                    }
+                });
+                thangChartConfig.data.labels = labels;
+                thangChartConfig.data.datasets = arrData;
+                // console.log(thangChartConfig);
+            }
+            const ipThang = document.querySelector("input[name=ipThang]");
+            let dd = new Date();
+            let y = dd.getFullYear();
+            let m = dd.getMonth();
+            let n = m < 10 ? ('0'+(m+1)) : (m+1);
+            let v = `${y}-${n}`;
+            // console.log(v);
+            ipThang.value = v;
+
+            loadDataThangChart((m+1).toString(),y.toString());
+
+            let thangC = document.getElementById('thangChart').getContext('2d');
+            let thangChart = new Chart(thangC,thangChartConfig);
+
+            ipThang.onchange = function(){
+                let arrTime = ipThang.value.split("-");
+                let yearP = arrTime[0];
+                let monthP = arrTime[1];
+                loadDataThangChart(monthP,yearP);
+            }
+            document.querySelector(".reloadThangChart").onclick = function(){
+                thangChart.update();
+            }
+        </script>
 <!-- Format tiền -->
 
     <script>
@@ -463,7 +1033,7 @@ if(isset($_SESSION["account"])){
                         loai:1
                         },
                     success:function(data,status){
-                        console.log(data);
+                        // console.log(data);
                          let rs = JSON.parse(data);  
 
                          if(rs.success == "true"){
@@ -531,7 +1101,7 @@ if(isset($_SESSION["account"])){
                         loai:0
                         },
                     success:function(data,status){
-                        console.log(data);
+                        // console.log(data);
                          let rs = JSON.parse(data);  
 
                          if(rs.success == "true"){
@@ -596,6 +1166,7 @@ if(isset($_SESSION["account"])){
                         </tr>`;
             htmlVi += `<option value="${value.ID}" data-money="${value.SoTien}">${value.TenVi}</option>`;
        });
+        document.getElementById("ip_hm_chonvi").innerHTML = htmlVi;
         document.getElementById("vi-chi-tieu").innerHTML = htmlVi;
         document.getElementById("vi-thu-nhap").innerHTML = htmlVi;
         document.getElementById("vi_chuyen_tien").innerHTML = htmlVi;
@@ -653,6 +1224,7 @@ if(isset($_SESSION["account"])){
                     }
             });
 
+                document.getElementById("ip_hm_loai_chi_tieu").innerHTML = htmlDMC;
                 document.getElementById("id-danh-muc-chi-tieu").innerHTML = htmlDMC;
                 document.getElementById("id-danh-muc-thu-nhap").innerHTML = htmlDMT;
                 document.querySelector(".dm_container-chi").innerHTML = htmlQLDMC;
@@ -757,7 +1329,7 @@ if(isset($_SESSION["account"])){
             data:{},
             success:function(data,status){
               if(data != -1){
-                console.log("Không rỗng");
+                // console.log("Không rỗng");
                 document.querySelector(".list-ct").innerHTML = renderListChiTieu(data,"1");
                 document.querySelector(".list-tn").innerHTML = renderListChiTieu(data,"0");
               }
@@ -821,7 +1393,7 @@ if(isset($_SESSION["account"])){
                     method:"POST",
                     data:{tendm:tenDanhMuc,loaidm:loaiDanhMuc},
                     success:function(data,status){
-                        console.log(data);
+                        // console.log(data);
                         if(data == "error1")
                             alert("Danh mục này đã có");
                         else if(data == "ok"){
