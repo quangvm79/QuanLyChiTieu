@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 25, 2021 lúc 06:38 AM
+-- Thời gian đã tạo: Th4 01, 2021 lúc 05:16 AM
 -- Phiên bản máy phục vụ: 10.4.16-MariaDB
 -- Phiên bản PHP: 7.4.12
 
@@ -53,13 +53,12 @@ INSERT INTO `danhmuc` (`ID`, `TenDanhMuc`, `LoaiDanhMuc`, `IDtk`) VALUES
 (20, 'Bạn gái', b'0', 1),
 (21, 'Trò chơi điện tử1', b'1', 1),
 (22, 'Game', b'0', 1),
-(38, 'aaa', b'1', 3),
 (39, 'â', b'0', 3),
-(40, 'Ăn uống', b'1', 4),
+(40, 'Vui chơi', b'1', 4),
 (41, 'Đi lại', b'1', 4),
 (42, 'Cưới hỏi', b'1', 4),
-(43, 'Vui chơi', b'1', 4),
-(44, 'Đổ xăng', b'1', 4),
+(43, 'Vui chơi1', b'1', 4),
+(44, 'Ăn uống', b'1', 4),
 (45, 'Lương', b'0', 4),
 (46, 'Thưởng', b'0', 4),
 (47, 'Vay nợ', b'0', 4),
@@ -99,56 +98,31 @@ INSERT INTO `danhmuc` (`ID`, `TenDanhMuc`, `LoaiDanhMuc`, `IDtk`) VALUES
 (81, 'Lương', b'0', 6),
 (82, 'Thưởng', b'0', 6),
 (83, 'Vay nợ', b'0', 6),
-(84, 'Được cho', b'0', 6);
+(84, 'Được cho', b'0', 6),
+(85, 'Ăn trưa', b'1', 1),
+(86, '@', b'0', 4);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hanmucchi`
+-- Cấu trúc bảng cho bảng `hanmucchitieu`
 --
 
-CREATE TABLE `hanmucchi` (
+CREATE TABLE `hanmucchitieu` (
   `ID` int(11) NOT NULL,
-  `TenHanMuc` varchar(50) DEFAULT NULL,
-  `NgayBatDau` date DEFAULT NULL,
-  `NgayKetThuc` date DEFAULT NULL,
-  `IDll` int(11) NOT NULL,
-  `SoTienHanMuc` int(11) DEFAULT NULL,
-  `SoTienConLai` int(11) DEFAULT NULL
+  `TenHanMuc` varchar(100) DEFAULT NULL,
+  `SoTien` int(11) DEFAULT NULL,
+  `IDvi` int(11) DEFAULT NULL,
+  `IDdm` int(11) DEFAULT NULL,
+  `LapLai` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Cấu trúc bảng cho bảng `hanmucchidanhmuc`
+-- Đang đổ dữ liệu cho bảng `hanmucchitieu`
 --
 
-CREATE TABLE `hanmucchidanhmuc` (
-  `IDhmc` int(11) NOT NULL,
-  `IDdm` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `hanmucchivi`
---
-
-CREATE TABLE `hanmucchivi` (
-  `IDhmc` int(11) NOT NULL,
-  `IDvi` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `laplai`
---
-
-CREATE TABLE `laplai` (
-  `ID` int(11) NOT NULL,
-  `LoaiLapLai` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `hanmucchitieu` (`ID`, `TenHanMuc`, `SoTien`, `IDvi`, `IDdm`, `LapLai`) VALUES
+(7, 'ádasd', 56456, 27, 44, 'everyday');
 
 -- --------------------------------------------------------
 
@@ -191,6 +165,24 @@ CREATE TABLE `thuchi` (
   `LoaiChiTieu` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `thuchi`
+--
+
+INSERT INTO `thuchi` (`ID`, `IDdm`, `IDvi`, `ThoiGian`, `GhiChu`, `SoTien`, `LoaiChiTieu`) VALUES
+(122, 39, 4, '2021-03-25', '-', 10000000, b'0'),
+(124, 48, 27, '2021-03-25', '-', 5000000, b'0'),
+(125, 42, 27, '2021-01-18', '-', 213213, b'1'),
+(126, 43, 27, '2021-02-22', '-', 545646, b'1'),
+(127, 44, 27, '2021-02-23', '-', 900000, b'1'),
+(128, 41, 27, '2021-03-26', '-', 40000, b'1'),
+(129, 41, 27, '2021-03-21', '-', 800000, b'1'),
+(130, 44, 27, '2020-06-16', '-', 6400000, b'1'),
+(131, 44, 27, '2020-01-22', '-', 7000000, b'1'),
+(132, 44, 27, '2021-03-21', '-', 7000000, b'1'),
+(133, 44, 27, '2019-06-19', '-', 6000000, b'1'),
+(134, 42, 27, '2021-02-22', '-', 999999, b'1');
+
 -- --------------------------------------------------------
 
 --
@@ -209,11 +201,13 @@ CREATE TABLE `vi` (
 --
 
 INSERT INTO `vi` (`ID`, `IDtk`, `TenVi`, `SoTien`) VALUES
-(4, 3, 'viettin', 620555),
+(4, 3, 'viettin', 10520555),
 (5, 3, 'momo', 863445),
 (7, 3, 'Tiền mặt', 6090000),
 (25, 5, 'Tiền Mặt', 1000000),
-(26, 6, 'Tiền Mặt', 100000);
+(26, 6, 'Tiền Mặt', 100000),
+(27, 4, 'Momo', 975201142),
+(29, 4, 'VietComBank', 9900000);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -228,31 +222,12 @@ ALTER TABLE `danhmuc`
 ALTER TABLE `danhmuc` ADD FULLTEXT KEY `TenDanhMuc` (`TenDanhMuc`);
 
 --
--- Chỉ mục cho bảng `hanmucchi`
+-- Chỉ mục cho bảng `hanmucchitieu`
 --
-ALTER TABLE `hanmucchi`
+ALTER TABLE `hanmucchitieu`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `IDll` (`IDll`);
-
---
--- Chỉ mục cho bảng `hanmucchidanhmuc`
---
-ALTER TABLE `hanmucchidanhmuc`
-  ADD PRIMARY KEY (`IDhmc`,`IDdm`),
-  ADD KEY `IDdm` (`IDdm`);
-
---
--- Chỉ mục cho bảng `hanmucchivi`
---
-ALTER TABLE `hanmucchivi`
-  ADD PRIMARY KEY (`IDhmc`,`IDvi`),
+  ADD KEY `IDdm` (`IDdm`),
   ADD KEY `IDvi` (`IDvi`);
-
---
--- Chỉ mục cho bảng `laplai`
---
-ALTER TABLE `laplai`
-  ADD PRIMARY KEY (`ID`);
 
 --
 -- Chỉ mục cho bảng `nguoidung`
@@ -284,19 +259,13 @@ ALTER TABLE `vi`
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
--- AUTO_INCREMENT cho bảng `hanmucchi`
+-- AUTO_INCREMENT cho bảng `hanmucchitieu`
 --
-ALTER TABLE `hanmucchi`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `laplai`
---
-ALTER TABLE `laplai`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `hanmucchitieu`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `nguoidung`
@@ -308,13 +277,13 @@ ALTER TABLE `nguoidung`
 -- AUTO_INCREMENT cho bảng `thuchi`
 --
 ALTER TABLE `thuchi`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT cho bảng `vi`
 --
 ALTER TABLE `vi`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -327,24 +296,11 @@ ALTER TABLE `danhmuc`
   ADD CONSTRAINT `danhmuc_ibfk_1` FOREIGN KEY (`IDtk`) REFERENCES `nguoidung` (`ID`);
 
 --
--- Các ràng buộc cho bảng `hanmucchi`
+-- Các ràng buộc cho bảng `hanmucchitieu`
 --
-ALTER TABLE `hanmucchi`
-  ADD CONSTRAINT `hanmucchi_ibfk_1` FOREIGN KEY (`IDll`) REFERENCES `laplai` (`ID`);
-
---
--- Các ràng buộc cho bảng `hanmucchidanhmuc`
---
-ALTER TABLE `hanmucchidanhmuc`
-  ADD CONSTRAINT `hanmucchidanhmuc_ibfk_1` FOREIGN KEY (`IDhmc`) REFERENCES `hanmucchi` (`ID`),
-  ADD CONSTRAINT `hanmucchidanhmuc_ibfk_2` FOREIGN KEY (`IDdm`) REFERENCES `danhmuc` (`ID`);
-
---
--- Các ràng buộc cho bảng `hanmucchivi`
---
-ALTER TABLE `hanmucchivi`
-  ADD CONSTRAINT `hanmucchivi_ibfk_1` FOREIGN KEY (`IDvi`) REFERENCES `vi` (`ID`),
-  ADD CONSTRAINT `hanmucchivi_ibfk_2` FOREIGN KEY (`IDhmc`) REFERENCES `hanmucchi` (`ID`);
+ALTER TABLE `hanmucchitieu`
+  ADD CONSTRAINT `hanmucchitieu_ibfk_1` FOREIGN KEY (`IDdm`) REFERENCES `danhmuc` (`ID`),
+  ADD CONSTRAINT `hanmucchitieu_ibfk_2` FOREIGN KEY (`IDvi`) REFERENCES `vi` (`ID`);
 
 --
 -- Các ràng buộc cho bảng `thuchi`

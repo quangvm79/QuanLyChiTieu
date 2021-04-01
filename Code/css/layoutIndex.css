@@ -160,3 +160,6 @@ body {
 .change_pass form button:hover {
   background-color: var(--theme-color__hover);
 }
+#chitieu_hm {
+  color: white;
+}

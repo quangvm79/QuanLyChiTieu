@@ -148,6 +148,11 @@ if(isset($_SESSION["account"])){
                         <label for="ngaychi">Ngày chi</label>
                         <input type="date" id="ngay-chi" name="ngaychi">
                     </div>
+                    <div class="half-form">
+                        <label for="chitieu_hm">Số tiền chi / hạn mức chi tiêu</label>
+                        <input type="text" id="chitieu_hm" data-hm-type="none" name="ip_chitieu_hm" disabled value="">
+                    </div>
+                    
                     <div class="form-chi-tieu__ghichu">
                         <label for="ngaychi">Ghi chú</label></br>
                         <textarea name="ghichu" maxlength="100"></textarea>
@@ -414,7 +419,10 @@ if(isset($_SESSION["account"])){
                         success:function(data,status){
                             console.log(data);
                            if(data == "1"){
+                            alert("Đã sửa thành công");
+                            document.querySelector(".sua_han_muc").style.display="none";
                             renderHanMuc();
+                            loadHanMucChiTieu();
                            }
                             else{
                                 alert("Có lỗi xảy ra");
@@ -555,6 +563,7 @@ if(isset($_SESSION["account"])){
                             document.querySelector("#ip_sotien").value="";
                             document.querySelector(".themhanmuc").style.display = "none";
                             renderHanMuc();
+                            loadHanMucChiTieu();
                         }
                             // let rs = JSON.parse(data);
                     }
@@ -604,8 +613,10 @@ if(isset($_SESSION["account"])){
                     method:"POST",
                     data:{idHm:id},
                     success:function(data,status){
-                       if(data == "1")
+                       if(data == "1"){
                         renderHanMuc();
+                        loadHanMucChiTieu();
+                       }
                     }
                 });
             }
@@ -1008,6 +1019,11 @@ if(isset($_SESSION["account"])){
             let tienTrongVi = document.querySelector("#form-chi-tieu input[name=vitien]").getAttribute("data-money");
             let ngayChi = document.querySelector("#form-chi-tieu input[name=ngaychi]").value;
             let ghiChu = document.querySelector("#form-chi-tieu textarea[name=ghichu]").value;
+            let soTienHanMuc = 0;
+            let soTienDaChi = 0;
+            soTienHanMuc = document.querySelector("#chitieu_hm").getAttribute("data-hm-tien");
+            soTienDaChi = document.querySelector("#chitieu_hm").getAttribute("data-hm-dachi");
+            let hmType = document.querySelector("#chitieu_hm").getAttribute("data-hm-type");
             if(ghiChu == "")
                 ghiChu = "-";
             if(soTienChi == "" || ngayChi == ""){
@@ -1015,8 +1031,19 @@ if(isset($_SESSION["account"])){
             }else if(parseInt(soTienChi) > parseInt(tienTrongVi)){
                 alert("Bạn không đủ tiền để chi, vui lòng chọn ví khác");
             }else{
-                themChiTieu(soTienChi,vi,danhMuc,ngayChi,ghiChu,tienTrongVi);
-              
+                if(hmType != "-"){
+                    let duKienChi = parseInt(soTienDaChi) + parseInt(soTienChi);
+                    if(duKienChi > parseInt(soTienHanMuc)){
+                        if(confirm("Số tiền bạn chi sẽ lớn hơn hạn mức đã đặt, bạn vẫn muốn tiếp tục"))
+                            themChiTieu(soTienChi,vi,danhMuc,ngayChi,ghiChu,tienTrongVi); 
+                    }else{
+                        themChiTieu(soTienChi,vi,danhMuc,ngayChi,ghiChu,tienTrongVi); 
+                    }
+                }else{
+                    themChiTieu(soTienChi,vi,danhMuc,ngayChi,ghiChu,tienTrongVi); 
+                }
+                
+                
             }
         }
 
@@ -1038,6 +1065,7 @@ if(isset($_SESSION["account"])){
 
                          if(rs.success == "true"){
                              alert("Thêm mới thành công");
+                             loadHanMucChiTieu();
                              document.querySelector("#form-chi-tieu input[name=sotien]").value = "";
                              document.querySelector("#form-chi-tieu textarea[name=ghichu]").value = "";
                              let tienvi = tienTrongVi - soTienChi;
@@ -1049,6 +1077,7 @@ if(isset($_SESSION["account"])){
                          }
                     }
                 });
+               
         }
     </script>
    
@@ -1151,6 +1180,7 @@ if(isset($_SESSION["account"])){
                 document.querySelector("#form-chi-tieu input[name=vitien]").value = `${fm(vi[0].SoTien)} đ`;
                 document.querySelector("#form-thu-nhap input[name=vitien]").setAttribute("data-money",vi[0].SoTien);
                 document.querySelector("#form-thu-nhap input[name=vitien]").value = `${fm(vi[0].SoTien)} đ`;
+              
             }
         });
    }
@@ -1236,6 +1266,9 @@ if(isset($_SESSION["account"])){
 <!-- Thay đổi tiền trong ví khi thay chọn ví -->
    <script>
 
+        document.getElementById("id-danh-muc-chi-tieu").onchange = function(){
+            loadHanMucChiTieu();
+        }
         document.getElementById("vi-chi-tieu").onchange = function(){
             let id = document.getElementById("vi-chi-tieu").value;
             $.ajax({
@@ -1248,8 +1281,111 @@ if(isset($_SESSION["account"])){
                     document.querySelector("#form-chi-tieu input[name=vitien]").value = `${fm(rs)} đ`;
                 }
             });
+
+            loadHanMucChiTieu();
         }
 
+        document.getElementById("ngay-chi").onchange = function(){
+            loadHanMucChiTieu();
+        }
+        
+        function loadHanMucChiTieu(){
+            let iddm = document.getElementById("id-danh-muc-chi-tieu").value;
+            let idvi = document.getElementById("vi-chi-tieu").value;
+            let soTienHanMuc = 0;
+            let lapLai = "-";
+            let ngayChiTieu = document.getElementById("ngay-chi").value;
+            if(ngayChiTieu == ""){
+                let d = new Date();
+                ngayChiTieu += d.getFullYear()+"-";
+                ngayChiTieu += (d.getMonth()+1)+"-";
+                ngayChiTieu += d.getDate();
+                // console.log(ngayChiTieu);
+            }
+            $.ajax({
+                url: "./appProcess/getSoTienHanMuc.php",
+                method:"POST",
+                data:{idvi:idvi,iddm:iddm},
+                success: function(data,status){
+                
+                    let rs = JSON.parse(data);
+                    if(rs.length == 0){
+                        document.querySelector("#chitieu_hm").value = "";
+                        document.querySelector("#chitieu_hm").setAttribute("data-hm-type","-");
+                        return ;
+                    }
+                    else{
+                        lapLai = rs[0].LapLai;
+                        document.querySelector("#chitieu_hm").setAttribute("data-hm-type",rs[0].LapLai);
+                        document.querySelector("#chitieu_hm").setAttribute("data-hm-tien",rs[0].SoTien);
+                        document.querySelector("#chitieu_hm").value = `${fm(rs[0].SoTien)} đ`;
+                        getTienDaChi(idvi,iddm,ngayChiTieu,lapLai);
+                    }
+                }
+            });
+
+           
+        }
+
+        function getTienDaChi(idvi,iddm,date,lapLai){
+            let startDate = "";
+            let endDate = "";
+            if(lapLai == "-")
+                return ;
+            else if(lapLai == "everyday"){
+                startDate = endDate = date;
+            }
+            else if(lapLai == "everyweek"){
+                let d = new Date(date);
+                let f =d.getDate() - d.getDay();
+                let l =f + 6;
+
+                let fd = new Date(d.setDate(f));
+                let ld = new Date(d.setDate(l));
+
+                startDate += fd.getFullYear()+"-";
+                startDate += (fd.getMonth()+1)+"-";
+                startDate += fd.getDate();
+
+                endDate +=ld.getFullYear()+"-";
+                endDate += (ld.getMonth()+1)+"-";
+                endDate +=ld.getDate();
+            }else if(lapLai == "everymonth"){
+                let d = new Date(date);
+                let y = d.getFullYear(), m = d.getMonth();
+                var firstDay = new Date(y, m, 1);
+                var lastDay = new Date(y, m + 1, 0);
+
+                startDate +=firstDay.getFullYear()+"-";
+                startDate += (firstDay.getMonth()+1)+"-";
+                startDate +=firstDay.getDate();
+
+                endDate +=lastDay.getFullYear()+"-";
+                endDate += (lastDay.getMonth()+1)+"-";
+                endDate +=lastDay.getDate();
+                // console.log(startDate);
+            }
+            console.log(startDate,endDate);
+            $.ajax({
+                    url: "./appProcess/getSoTiendaTieu.php",
+                    method:"POST",
+                    data:{idvi:idvi,iddm:iddm,start:startDate,end:endDate},
+                    success: function(data,status){
+                        console.log(data);
+                        let rs = JSON.parse(data);
+                        if(rs[0].TongTien != null){
+                            let hmct = document.querySelector("#chitieu_hm");
+                            hmct.value = fm(rs[0].TongTien)+" đ /"+hmct.value;
+                            document.querySelector("#chitieu_hm").setAttribute("data-hm-dachi",rs[0].TongTien);
+                        }
+                        else{
+                            let hmct = document.querySelector("#chitieu_hm");
+                            hmct.value = "0 đ /"+hmct.value;
+                            document.querySelector("#chitieu_hm").setAttribute("data-hm-dachi",0);
+                        }
+                    }
+                });
+        }
 
         document.getElementById("vi-thu-nhap").onchange = function(){
             let id = document.getElementById("vi-thu-nhap").value;
@@ -1374,6 +1510,8 @@ if(isset($_SESSION["account"])){
                 domTongTien.innerHTML = `Tổng cộng ${fm(tient)} đ`;
                 domTongTien.setAttribute("data-tongtien",tient);
             }   
+
+            loadHanMucChiTieu();
         }
     </script>
 
@@ -1691,6 +1829,11 @@ if(isset($_SESSION["account"])){
                         }
                     });
                 }
+            }
+        </script>
+        <script>
+            window.onload = function(){
+                loadHanMucChiTieu();
             }
         </script>
 </body>
